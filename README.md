@@ -5,8 +5,6 @@
 This Python script transforms employee data from a columnar format in a CSV file into a historical, row-based version suitable for database storage. This format facilitates historical analysis of employee compensation, engagement, and performance reviews.
 
 
-- **Structured Data:** Reorganizes columns of input csv file, placing date-related columns in historical order for better readability.
-
 - **Missing Value Imputation:** Handles missing values in "Last Compensation" and "Compensation" columns by intelligently inheriting values from previous entries (either for the same employee or the preceding record).
   
 - **Pay Raise Dates:** Identifies the date of the most recent pay raise for each employee based on changes in their compensation.
@@ -32,7 +30,6 @@ This Python script transforms employee data from a columnar format in a CSV file
 
 ### Explanation of Functions:
 
-- `rearrange_columns:` Sorts columns by identifying date related columns and placing them in historical order.
   
 - `inherit_previous_value:` Iterates through the data, carrying forward the most recent non-null values for **Last Compensation** and **Compensation** columns.
   
