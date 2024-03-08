@@ -78,4 +78,4 @@ def process_data(input_file, output_file):
     
     output_df_updated.to_csv(output_file, index=False)
 
-process_data('input.csv', 'output222.csv')
+process_data('input.csv', 'output.csv')
