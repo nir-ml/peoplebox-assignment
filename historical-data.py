@@ -1,12 +1,6 @@
 import pandas as pd
 from datetime import datetime, timedelta
 
-def rearrange_columns(df):
-    date_columns = [col for col in df.columns if 'date' in col]
-    sorted_date_columns = sorted(date_columns, key=lambda x: pd.to_datetime(df[x].dropna().min()))
-    desired_order = [col for col in df.columns if col not in date_columns] + sorted_date_columns
-    return df[desired_order]
-
 def inherit_previous_value(data):
     last_comp = last_comp_idx = compensation = compensation_idx = None
     for i, row in enumerate(data):
@@ -48,7 +42,6 @@ def assign_end_date(data):
 
 def process_data(input_file, output_file):
     df = pd.read_csv(input_file)
-    df = rearrange_columns(df)
     
     output = []
     for index, row in df.iterrows():
@@ -85,4 +78,4 @@ def process_data(input_file, output_file):
     
     output_df_updated.to_csv(output_file, index=False)
 
-process_data('input.csv', 'output.csv')
+process_data('input.csv', 'output222.csv')
